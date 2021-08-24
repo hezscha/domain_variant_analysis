@@ -1,0 +1,47 @@
+
+checking the sub mats per MSA pos in SH3_1 domain analysis
+
+the submat for pos 1 is here:
+/storage1/hezscha/genome_proteome_map/domain_analysis/results/SH3_1/submat_1.csv
+the columns are WT aas and the rows variant (since the column headers have an X and the row names have a *)
+
+We can see that we have counted:
+1x V->G
+4x V->A
+5x V->L
+5x V->I
+5x V->M
+1x V->D
+1x V->E
+
+among the domain seqs that have WT V in pos 1 we have the following subs:
+Q9H6Q3 V 1 38 ['V38A', 'V38M']
+Q8IZP0 V 1 452 ['V452I']
+O75962 V 1 1662 ['V1662L']
+P42685 V 1 48 ['V48A']
+P00519 V 1 67 ['V67D', 'V67I']
+Q5TCZ1 V 1 172 ['V172E', 'V172L', 'V172M']
+O75791 V 1 4 ['V4I']
+P07947 V 1 97 ['V97L', 'V97M']
+Q15642 V 1 546 ['V546L']
+P51451 V 1 64 ['V64M']
+P42684 V 1 113 ['V113I']
+P14317 V 1 434 ['V434M']
+Q13882 V 1 14 ['V14A', 'V14G']
+P16333 V 1 8 ['V8A']
+Q96MF2 V 1 253 ['V253L']
+P14598 V 1 232 ['V232I']
+
+which gives the counts:
+V->A : 4
+V->M : 5
+V->I : 5
+V->L : 5
+V->D : 1
+V->E : 1 
+V->G : 1 
+
+So my manual count matches the matrix count!
+
+
+

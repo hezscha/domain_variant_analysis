@@ -1,0 +1,18 @@
+https://trello.com/c/xqeOR2a9/70-checking-important-sh31-pos
+
+there is a conserved W at pHMM state 32, which is MSA col 37 (look at /storage1/hezscha/genome_proteome_map/results/domain_analysis/SH3_1/pfam_aln/PF00018_seed.hmm and consult the about pfam card)
+now I need to find out which pos that is in my combine aln (seed + human proteome)
+
+>pfam seed: /storage1/hezscha/genome_proteome_map/results/domain_analysis/SH3_1/pfam_aln/PF00018_seed.hmm
+>VAV_HUMAN/788-834
+KARYDFCARD--RSELSLKEGDIIKILNKKGQ--QGWWRGEIY-----GRVGWFPA
+                                    |
+                                  this W is pos 37
+
+>combined: /storage1/hezscha/genome_proteome_map/results/domain_analysis/SH3_1/pfam_to_instances/aln_seed_instance
+>VAV_HUMAN/788-834
+KAR--YDFCAR-------D--RSELSLKEGDIIKILNKK-------GQ--QGWWRGEIY------------GRVGWFPA
+                                                    |
+                                                 here it's 53
+                                                    
+                                                    
