@@ -27,9 +27,27 @@ base_dir = '/storage1/hezscha/genome_proteome_map/domain_analysis/results/'
 aln_file = os.path.join(base_dir, dom_name, 'alignment', 'aln_seed_instance') 
 print(aln_file)
 
-server = 'http://skylign.org'
-r = requests.get(server, headers={ "Content-Type" : "application/json"}, files={ 'file': open(aln_file,'rb'),'processing': 'hmm_all'})
-print(r)
-decoded = r.json()
-print(decoded)
-print(decoded.keys)
+# ~ server = 'http://skylign.org'
+# ~ r = requests.get(server, headers={ "Content-Type" : "application/json"}, files={ 'file': open(aln_file,'rb'),'processing': 'hmm_all'})
+# ~ print(r)
+# ~ decoded = r.json()
+# ~ print(decoded)
+# ~ print(decoded.keys)
+
+#this works
+headers = {
+    'Accept': 'application/json',
+}
+
+files = {
+    'file': ('hmm_all', open('/storage1/hezscha/genome_proteome_map/domain_analysis/results/SH3_1/alignment/aln_seed_instance', 'rb')),
+    'processing': (None, 'hmm_all'),
+}
+
+response = requests.post('http://skylign.org/', headers=headers, files=files)
+#response.text #for checking
+dec = response.json()
+
+#retrieve logo
+ret_url=dec['url']
+ret= requests.get(ret_url, headers={ "Content-Type" : "application/json"})
