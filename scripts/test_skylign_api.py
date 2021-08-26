@@ -22,13 +22,13 @@ args = parser.parse_args()
 
 
 dom_name = args.dom
-base_dir = '/storage1/hezscha/genome_proteome_map/domain_variant_analysis/results/'
+base_dir = '/storage1/hezscha/genome_proteome_map/domain_analysis/results/'
 
 aln_file = os.path.join(base_dir, dom_name, 'alignment', 'aln_seed_instance') 
 print(aln_file)
 
 server = 'http://skylign.org'
-r = requests.get(server, headers={ "Content-Type" : "application/json"}, files={ 'file': aln_file,'processing': 'hmm_all'})
+r = requests.get(server, headers={ "Content-Type" : "application/json"}, files={ 'file': open(aln_file,'rb'),'processing': 'hmm_all'})
 print(r)
 decoded = r.json()
 print(decoded)
